@@ -1,0 +1,39 @@
+server:
+  port: 9091
+
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka : true
+    service-url:
+      defaultZone: ${EUREKA_SERVER-ADDRESS:http://localhost:8761/eureka}
+spring:
+  application:
+    name: CLOUD-GATEWAY
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          - id: CATEGORY-SERVICES
+            uri: lb://CATEGORY-SERVICES
+            predicates:
+              - Path=/category/**
+          - id: PRODUCT-SERVICES
+            uri: lb://PRODUCT-SERVICES
+            predicates:
+              - Path=/product/**
+          - id: ASPNET-SERVICE
+            uri: lb://ASPNET-SERVICE
+            predicates:
+              - Path=/api/rooms/**
+          - id: RESERVATION-SERVICES
+            uri: lb://RESERVATION-SERVICES
+            predicates:
+              - Path=/reservation/**
+
+
+
