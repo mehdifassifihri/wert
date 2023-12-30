@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/etage_service.props" />
+</Project>
