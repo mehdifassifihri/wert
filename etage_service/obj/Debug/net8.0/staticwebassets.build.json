@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "OrwmGQcEUfgPEMVHrulLY9RbzI742tAbB/0cHfKPorQ=",
+  "Source": "etage_service",
+  "BasePath": "_content/etage_service",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
