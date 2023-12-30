@@ -1,25 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "/Users/mehdi/Desktop/r/RoomsServices/rooms.csproj": {}
+    "/Users/mac/Desktop/etage_service/wert/RoomsServices/rooms.csproj": {}
   },
   "projects": {
-    "/Users/mehdi/Desktop/r/RoomsServices/rooms.csproj": {
+    "/Users/mac/Desktop/etage_service/wert/RoomsServices/rooms.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mehdi/Desktop/r/RoomsServices/rooms.csproj",
+        "projectUniqueName": "/Users/mac/Desktop/etage_service/wert/RoomsServices/rooms.csproj",
         "projectName": "rooms",
-        "projectPath": "/Users/mehdi/Desktop/r/RoomsServices/rooms.csproj",
-        "packagesPath": "/Users/mehdi/.nuget/packages/",
-        "outputPath": "/Users/mehdi/Desktop/r/RoomsServices/obj/",
+        "projectPath": "/Users/mac/Desktop/etage_service/wert/RoomsServices/rooms.csproj",
+        "packagesPath": "/Users/mac/.nuget/packages/",
+        "outputPath": "/Users/mac/Desktop/etage_service/wert/RoomsServices/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/mehdi/.nuget/NuGet/NuGet.Config"
+          "/Users/mac/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

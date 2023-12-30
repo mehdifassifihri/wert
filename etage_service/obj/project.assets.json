@@ -4453,11 +4453,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/mac/Desktop/etage_service/etage_service/etage_service.csproj",
+      "projectUniqueName": "/Users/mac/Desktop/etage_service/wert/etage_service/etage_service.csproj",
       "projectName": "etage_service",
-      "projectPath": "/Users/mac/Desktop/etage_service/etage_service/etage_service.csproj",
+      "projectPath": "/Users/mac/Desktop/etage_service/wert/etage_service/etage_service.csproj",
       "packagesPath": "/Users/mac/.nuget/packages/",
-      "outputPath": "/Users/mac/Desktop/etage_service/etage_service/obj/",
+      "outputPath": "/Users/mac/Desktop/etage_service/wert/etage_service/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/mac/.nuget/NuGet/NuGet.Config"
