@@ -1,13 +1,15 @@
-using System.ComponentModel.DataAnnotations;
 
-namespace rooms.Entity
+
+using RoomsServices.Entity;
+
+namespace RoomsServices.Dto
 {
-    public class Room
+    public class RoomDto
     {
-        [Key]
         public Guid Id { get; set; }
         public string Name { get; set; } = string.Empty;
         public int MaxNumber { get; set; }
-        public Guid FloorId { get; set; }
+
+        public Floor? Floor { get; set; }
     }
 }

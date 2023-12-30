@@ -21,6 +21,12 @@ builder.Services.AddCors(policy =>
     });
 });
 
+
+builder.Services.AddHttpClient("httpClient", options =>
+{
+    options.BaseAddress = new Uri("http://localhost:5032/api");
+});
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
