@@ -4448,25 +4448,24 @@
     ]
   },
   "packageFolders": {
-    "/Users/mac/.nuget/packages/": {}
+    "/Users/mehdi/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/mac/Desktop/etage_service/wert/etage_service/etage_service.csproj",
+      "projectUniqueName": "/Users/mehdi/Desktop/r/etage_service/etage_service.csproj",
       "projectName": "etage_service",
-      "projectPath": "/Users/mac/Desktop/etage_service/wert/etage_service/etage_service.csproj",
-      "packagesPath": "/Users/mac/.nuget/packages/",
-      "outputPath": "/Users/mac/Desktop/etage_service/wert/etage_service/obj/",
+      "projectPath": "/Users/mehdi/Desktop/r/etage_service/etage_service.csproj",
+      "packagesPath": "/Users/mehdi/.nuget/packages/",
+      "outputPath": "/Users/mehdi/Desktop/r/etage_service/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/mac/.nuget/NuGet/NuGet.Config"
+        "/Users/mehdi/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "/usr/local/share/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

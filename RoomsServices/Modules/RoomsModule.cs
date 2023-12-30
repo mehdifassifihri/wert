@@ -20,11 +20,12 @@ namespace rooms.Modules
                 List<RoomDto> roomDtos = new();
 
                 var httpClient = new HttpClient();
+                httpClient.BaseAddress = new Uri("http://localhost:5033");
 
 
                 foreach (var room in rooms)
                 {
-                    var res = await httpClient.GetAsync("http://localhost:5033/api/floor/" + room.FloorId is null ? "21790a76-01fe-4dfe-8d57-62fef6dad0a8" : room.FloorId.ToString());
+                    var res = await httpClient.GetAsync("/api/floor/" + room.FloorId);
 
                     if (res.IsSuccessStatusCode)
                     {
@@ -95,13 +96,13 @@ namespace rooms.Modules
 
                 Room? room = dbContext.Rooms.Find(id);
                 HttpClient httpClient = new();
-
+                httpClient.BaseAddress = new Uri("http://localhost:5033");
 
 
                 if (room is null)
                     return Results.NotFound("Cannot find this room");
 
-                var res = await httpClient.GetAsync("http://localhost:5033/api/floor/" + room.FloorId is null ? "21790a76-01fe-4dfe-8d57-62fef6dad0a8" : room.FloorId.ToString());
+                var res = await httpClient.GetAsync("/api/floor/" + room.FloorId);
 
                 if (res.IsSuccessStatusCode)
                 {

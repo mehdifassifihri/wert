@@ -1,6 +1,7 @@
 using etage_service.Data;
 using etage_service.Module;
 using Microsoft.EntityFrameworkCore;
+using Steeltoe.Discovery.Client;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,8 +25,12 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+builder.Services.AddDiscoveryClient(builder.Configuration);
 
 var app = builder.Build();
+
+app.UseDiscoveryClient();
+
 
 app.UseCors();
 
