@@ -5,27 +5,81 @@ import axios from "axios";
 
 const { Column, ColumnGroup } = Table;
 const Salles = () => {
+  const [name, setName] = useState('');
+  const [maxNumber, setMaxNumber] = useState('');
+  const [selectedFloorId, setSelectedFloorId] = useState('');
   const [rooms, setRooms] = useState([]);
+  const [floors, setFloors] = useState([]);
+
+  const handleFloorChange = (value) => {
+    setSelectedFloorId(value);
+    console.log("Selected room ID:", value); // or handle the ID as needed
+  };
+
+  const floorsOptions = floors.map(floor => {
+  
+    return {
+      value: floor.id,
+      label: `${floor.floorNumber}` 
+    };
+  });
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch("http://localhost:9091/api/rooms");
+      if (!response.ok) {
+        throw new Error("Data could not be fetched!");
+      }
+      const data = await response.json();
+      console.log(data);
+      setRooms(data);
+    } catch (error) {
+      console.log(error.message);
+    } finally {
+      console.log(false);
+    }
+  };
+
+  const fetchFloors = async () => {
+    try {
+      const response = await fetch("http://localhost:5033/api/floors");
+      if (!response.ok) {
+        throw new Error("Data could not be fetched!");
+      }
+      const data = await response.json();
+      console.log(data);
+      setFloors(data);
+    } catch (error) {
+      console.log(error.message);
+    } finally {
+      console.log(false);
+    }
+  };
+
+  const handleSubmit=async()=>{
+    const body = {
+      "name":name,
+      "maxNumber": maxNumber,
+      "floorId": selectedFloorId,
+      
+  }
+  try {
+    
+    const response = await axios.post("http://localhost:5136/api/rooms/create", body).then(()=>{
+      fetchData();
+    });
+    
+    console.log('Reservation successful:', response.data);
+  } catch (err) {
+    console.log(err.message || 'An error occurred while making the reservation.');
+  } 
+  }
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("http://localhost:9091/api/rooms");
-        if (!response.ok) {
-          throw new Error("Data could not be fetched!");
-        }
-        const data = await response.json();
-        console.log(data);
-        setRooms(data);
-      } catch (error) {
-        console.log(error.message);
-      } finally {
-        console.log(false);
-      }
-    };
-
+    
+    fetchFloors();
     fetchData();
-    console.log(rooms);
+    
   }, []);
 
   return (
@@ -53,29 +107,32 @@ const Salles = () => {
               placeholder="Name"
               className="outline-none bg-zinc-100 text-xs py-3 px-2 rounded-md"
               type="text"
+              value={name}
+              onChange={(e=>setName(e.target.value))}
             />
             <div className="flex items-center gap-2">
               <label className="text-sm">Max Personnes</label>
               <input
                 className="outline-none bg-zinc-100 text-xs py-3 px-2 w-12 h-12 rounded-md text-center"
                 type="text"
+                value={maxNumber}
+                onChange={(e=>setMaxNumber(e.target.value))}
               />
             </div>
             <div className="flex items-center gap-2">
               <label className="text-sm">Etage</label>
 
               <Select
-                defaultValue="lucy"
+                defaultValue="Select floor"
                 style={{
                   width: 120,
                 }}
-                options={[
-                  {
-                    value: "lucy",
-                    label: "Lucy",
-                  },
-                ]}
+                options={floorsOptions}
+                onChange={handleFloorChange}
               />
+              <button onClick={handleSubmit} className="text-sm py-2 w-44 text-white bg-orange-400 rounded-md">
+            Add
+          </button>
             </div>
           </div>
           <Table className="mt-5" dataSource={rooms}>

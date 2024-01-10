@@ -8,4 +8,6 @@ import java.util.List;
 public interface ReservationtsServices {
     List<Reservationresponse> getAllReservations();
     Reservation addReservation(Reservation reservation);
+
+    void deleteAll();
 }

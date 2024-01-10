@@ -10,7 +10,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Entity
 @Data
@@ -25,8 +27,9 @@ public class Reservation {
     private String clientName;
     private String phone;
     private String email;
-    private LocalDateTime dateDebut;
-    private LocalDateTime dateFin;
+    private LocalDate date;
+    private LocalTime dateDebut;
+    private LocalTime dateFin;
     private String room_id;
 
 

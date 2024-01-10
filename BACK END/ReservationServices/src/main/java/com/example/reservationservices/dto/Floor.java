@@ -5,11 +5,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class Roomresquest {
+@NoArgsConstructor
+public class Floor {
     private String id;
-    private String name;
-    private int maxNumber;
-    private Floor floor;
+    private int floorNumber;
 }

@@ -46,11 +46,12 @@ const Reservations = () => {
           <img className="mb-44 w-8" src={Salle} alt="" />
         </div>
         <div className="w-full flex flex-col p-5">
-          <Table className="mt-5" dataSource={reservations}>
+          <Table className="mt-5" dataSource={reservations} pagination={{ pageSize: 7 }}>
             <Column title="Client" dataIndex="clientName" key="address" />
             <Column title="Phone" dataIndex="phone" key="address" />
-            <Column title="Date Debut" dataIndex="address" key="address" />
-            <Column title="Date Fin" dataIndex="address" key="address" />
+            <Column title="Date" dataIndex="date" key="address" />
+            <Column title="Debut" dataIndex="dateDebut" key="address" />
+            <Column title="Fin" dataIndex="dateFin" key="address" />
             <Column
               title="Salle"
               dataIndex={["roomDetails", "name"]}

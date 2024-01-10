@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/mehdi/Desktop/r/RoomsServices/rooms.csproj": {}
+    "/Users/MEHDI/Desktop/wert/BACK END/RoomsServices/rooms.csproj": {}
   },
   "projects": {
-    "/Users/mehdi/Desktop/r/RoomsServices/rooms.csproj": {
+    "/Users/MEHDI/Desktop/wert/BACK END/RoomsServices/rooms.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mehdi/Desktop/r/RoomsServices/rooms.csproj",
+        "projectUniqueName": "/Users/MEHDI/Desktop/wert/BACK END/RoomsServices/rooms.csproj",
         "projectName": "rooms",
-        "projectPath": "/Users/mehdi/Desktop/r/RoomsServices/rooms.csproj",
-        "packagesPath": "/Users/mehdi/.nuget/packages/",
-        "outputPath": "/Users/mehdi/Desktop/r/RoomsServices/obj/",
+        "projectPath": "/Users/MEHDI/Desktop/wert/BACK END/RoomsServices/rooms.csproj",
+        "packagesPath": "/Users/MEHDI/.nuget/packages/",
+        "outputPath": "/Users/MEHDI/Desktop/wert/BACK END/RoomsServices/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/mehdi/.nuget/NuGet/NuGet.Config"
+          "/Users/MEHDI/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -98,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

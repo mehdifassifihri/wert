@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/reservation")
+@CrossOrigin()
 public class ReservationControllers {
     ReservationtsServicesImpl reservationtsServices;
 
@@ -21,10 +22,16 @@ public class ReservationControllers {
         List<Reservationresponse> reservationresponses = reservationtsServices.getAllReservations();
         return  ResponseEntity.ok(reservationresponses);
     }
-    @PostMapping
+    @CrossOrigin
+    @PostMapping()
     ResponseEntity<Reservation> addReservation(@RequestBody Reservation reservation){
         Reservation reservation1 = reservationtsServices.addReservation(reservation);
         return ResponseEntity.ok(reservation1);
+    }
+    @DeleteMapping()
+    ResponseEntity<?> deleteAll(){
+        reservationtsServices.deleteAll();
+        return ResponseEntity.ok().build();
     }
 
 }

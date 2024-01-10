@@ -32,10 +32,11 @@ public class ReservationtsServicesImpl implements ReservationtsServices{
             reservationresponse.setClientName(reservation.getClientName());
             reservationresponse.setPhone(reservation.getPhone());
             reservationresponse.setEmail(reservation.getEmail());
+            reservationresponse.setDate(reservation.getDate());
             reservationresponse.setDateDebut(reservation.getDateDebut());
             reservationresponse.setDateFin(reservation.getDateFin());
             Roomresquest roomresquest = restTemplate.getForObject("http://ASPNET-SERVICE/api/rooms/"+reservation.getRoom_id(), Roomresquest.class);
-            Reservationresponse.RoomDetails roomDetails = new Reservationresponse.RoomDetails(roomresquest.getId(), roomresquest.getName(), roomresquest.getMaxNumber());
+            Reservationresponse.RoomDetails roomDetails = new Reservationresponse.RoomDetails(roomresquest.getId(), roomresquest.getName(), roomresquest.getMaxNumber(),roomresquest.getFloor());
             reservationresponse.setRoomDetails(roomDetails);
             reservationresponses.add(reservationresponse);
         }
@@ -45,5 +46,10 @@ public class ReservationtsServicesImpl implements ReservationtsServices{
     @Override
     public Reservation addReservation(Reservation reservation) {
         return reservationsRepository.save(reservation);
+    }
+
+    @Override
+    public void deleteAll() {
+        reservationsRepository.deleteAll();
     }
 }

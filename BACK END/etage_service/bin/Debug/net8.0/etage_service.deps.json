@@ -1026,16 +1026,7 @@
         }
       },
       "System.Diagnostics.DiagnosticSource/5.0.1": {},
-      "System.Diagnostics.EventLog/6.0.0": {
-        "runtimeTargets": {
-          "runtimes/win/lib/net6.0/System.Diagnostics.EventLog.Messages.dll": {
-            "rid": "win",
-            "assetType": "runtime",
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.21.52210"
-          }
-        }
-      },
+      "System.Diagnostics.EventLog/6.0.0": {},
       "System.IO.Pipelines/6.0.3": {},
       "System.Memory/4.5.3": {},
       "System.Net.Http.Json/3.2.1": {

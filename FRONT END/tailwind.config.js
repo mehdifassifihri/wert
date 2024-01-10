@@ -1,5 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  extend: {
+    backgroundImage: {
+      'bgimage': "url('/Users/MEHDI/Desktop/wert/FRONT END/src/assets/bgg.jpg')"
+    }
+  },
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -11,5 +16,6 @@ module.exports = {
   theme: {
     extend: {},
   },
+  
   plugins: [],
 };

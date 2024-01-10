@@ -4,7 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Data
 @NoArgsConstructor
@@ -14,8 +16,9 @@ public class Reservationresponse {
         private String clientName;
         private String phone;
         private String email;
-        private LocalDateTime dateDebut;
-        private LocalDateTime dateFin;
+        private LocalDate date;
+        private LocalTime dateDebut;
+        private LocalTime dateFin;
         private RoomDetails roomDetails;
         @Data
         @AllArgsConstructor
@@ -26,5 +29,6 @@ public class Reservationresponse {
 
             private String name;
             private int maxNumber;
+            private Floor floor;
         }
 }
