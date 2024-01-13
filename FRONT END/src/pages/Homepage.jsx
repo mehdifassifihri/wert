@@ -30,12 +30,12 @@ const Homepage = () => {
   }
   try {
     
-    const response = await axios.post("http://localhost:9091/reservation", body).then(()=>{
+    const response = await axios.post("http://localhost:8283/reservation", body).then(()=>{
      setName("")
      setPhone("")
-   setEmail("")
-   setSelectedDate(null)
-   setSelectedRoomId(null)
+     setEmail("")
+     setSelectedDate(null)
+     setSelectedRoomId(null)
     });
     
     console.log('Reservation successful:', response.data);
@@ -46,12 +46,12 @@ const Homepage = () => {
 
   const handleDateChange = (date, dateString) => {
     setSelectedDate(date);
-    console.log("Selected Date:", dateString); // dateString is in 'YYYY-MM-DD' format
+    console.log("Selected Date:", dateString); 
   };
   
   const handleRoomChange = (value) => {
     setSelectedRoomId(value);
-    console.log("Selected room ID:", value); // or handle the ID as needed
+    console.log("Selected room ID:", value); 
   };
   
   const roomOptions = rooms.map(room => {

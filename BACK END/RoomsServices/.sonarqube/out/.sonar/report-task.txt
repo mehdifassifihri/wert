@@ -1,0 +1,6 @@
+projectKey=zoom-read-Roomsservices
+serverUrl=http://127.0.0.1:9000
+serverVersion=10.3.0.82913
+dashboardUrl=http://127.0.0.1:9000/dashboard?id=zoom-read-Roomsservices
+ceTaskId=AYz5nGIe2UfoThQF_-Dy
+ceTaskUrl=http://127.0.0.1:9000/api/ce/task?id=AYz5nGIe2UfoThQF_-Dy

@@ -135,7 +135,7 @@ const Salles = () => {
           </button>
             </div>
           </div>
-          <Table className="mt-5" dataSource={rooms}>
+          <Table className="mt-5" dataSource={rooms} pagination={{ pageSize: 7 }}>
             <Column title="Name" dataIndex="name" key="name" />
             <Column title="MaxNumber" dataIndex="maxNumber" key="maxNumber" />
           </Table>
