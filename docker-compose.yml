@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+
+  serviceregistry:
+    build: ./BACK END/ServiceRegistry
+    container_name: serviceregistry
+    ports:
+      - "8761:8761"
+
+  cloudgateway:
+    build: ./BACK END/CloudGateway
+    container_name: cloudgateway
+    ports:
+      - "9091:9091"
+    environment:
+      EUREKA_SERVER_ADDRESS: http://serviceregistry:8761/eureka
+    depends_on:
+      - serviceregistry
+
+  reservationservices:
+    build: ./BACK END/ReservationServices
+    container_name: reservationservices
+    ports:
+      - "9090:9090"
+    environment:
+      EUREKA_SERVER_ADDRESS: http://serviceregistry:8761/eureka
+      DB_HOST: mysql
+      SPRING_DATASOURCE_PASSWORD: root
+    depends_on:
+      - serviceregistry
+      - mysql
+      
+  front-end:
+    build: ./FRONT END
+    container_name: front-end
+    ports:
+      - "3000:3000"
+   
+
+
+  
