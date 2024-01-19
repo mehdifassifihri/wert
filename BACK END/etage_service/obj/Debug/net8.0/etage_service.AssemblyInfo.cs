@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("etage_service")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b675b37d535bd14a4817c0b51beb79166ec84d4d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+da883a85239f509b2a780c8d294d78f0408c4219")]
 [assembly: System.Reflection.AssemblyProductAttribute("etage_service")]
 [assembly: System.Reflection.AssemblyTitleAttribute("etage_service")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

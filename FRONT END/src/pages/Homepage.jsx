@@ -1,11 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { TimePicker, DatePicker, Select } from "antd";
+import { Button, message, Space } from 'antd';
+
 import axios from "axios";
 import moment from 'moment';
 import "../css/Homepage.css"
 
 
 const Homepage = () => {
+  const [messageApi, contextHolder] = message.useMessage();
+  const success = () => {
+    messageApi.open({
+      type: 'success',
+      content: 'Réservation effectué',
+    });
+  };
   const [name ,setName]=useState('')
   const [email ,setEmail]=useState('')
   const [phone ,setPhone]=useState('')
@@ -30,14 +39,14 @@ const Homepage = () => {
   }
   try {
     
-    const response = await axios.post("http://localhost:8283/reservation", body).then(()=>{
+    const response = await axios.post("http://localhost:9091/reservation", body).then(()=>{
      setName("")
      setPhone("")
      setEmail("")
      setSelectedDate(null)
      setSelectedRoomId(null)
     });
-    
+    success();
     console.log('Reservation successful:', response.data);
   } catch (err) {
     console.log(err.message || 'An error occurred while making the reservation.');
@@ -72,6 +81,7 @@ const Homepage = () => {
         }
         const data = await response.json();
         console.log(data);
+        
         setRooms(data);
       } catch (error) {
         console.log(error.message);
@@ -87,6 +97,7 @@ const Homepage = () => {
   
   return (
     <div>
+      {contextHolder}
       <div className="flex bg-bgimage items-center justify-center gap-6 bg-cover bg-[url('/Users/MEHDI/Desktop/wert/FRONT END/src/assets/logo.png')] py-24 h-screen test">
         <p className="w-80 text-3xl text-white">
           Réservez Maintenant votre espace de Reunion Chez{" "}
